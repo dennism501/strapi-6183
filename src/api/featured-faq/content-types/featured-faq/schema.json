@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "featured_faqs",
+  "info": {
+    "singularName": "featured-faq",
+    "pluralName": "featured-faqs",
+    "displayName": "Featured Faq"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
+    }
+  }
+}

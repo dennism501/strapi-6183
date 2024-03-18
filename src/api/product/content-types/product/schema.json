@@ -1,0 +1,102 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "year": {
+      "type": "integer",
+      "required": false,
+      "max": 2100,
+      "min": 1900
+    },
+    "currentInformation": {
+      "type": "blocks"
+    },
+    "location": {
+      "type": "string",
+      "default": "Japan"
+    },
+    "videoLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.video-link"
+    },
+    "model": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::model.model",
+      "inversedBy": "products"
+    },
+    "price": {
+      "type": "biginteger",
+      "min": "0",
+      "max": "10000000"
+    },
+    "sourceCompany": {
+      "type": "string",
+      "private": true
+    },
+    "sourceURL": {
+      "type": "string",
+      "private": true,
+      "unique": true
+    },
+    "sourcePortalSiteURL": {
+      "type": "string",
+      "private": true,
+      "unique": true
+    },
+    "sourceLastChecked": {
+      "type": "date",
+      "private": true
+    },
+    "sourcePrice": {
+      "type": "biginteger",
+      "max": "1000000000",
+      "min": "0",
+      "private": true
+    },
+    "soldOut": {
+      "type": "boolean",
+      "default": false
+    },
+    "sourceCurrentInformation": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "document": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

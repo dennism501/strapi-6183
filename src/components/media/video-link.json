@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_media_video_links",
+  "info": {
+    "displayName": "videoLink",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "videoLink": {
+      "type": "string",
+      "regex": "https://*"
+    }
+  }
+}

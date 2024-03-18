@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "models",
+  "info": {
+    "singularName": "model",
+    "pluralName": "models",
+    "displayName": "Model",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "manufacturer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::manufacturer.manufacturer",
+      "inversedBy": "models"
+    },
+    "weight": {
+      "type": "integer",
+      "max": 100000,
+      "min": 0
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "model"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "specification": {
+      "type": "blocks"
+    },
+    "document": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "dimension_x": {
+      "type": "integer",
+      "max": 100000,
+      "min": 100
+    },
+    "dimension_y": {
+      "type": "integer",
+      "max": 100000,
+      "min": 100
+    },
+    "dimension_z": {
+      "type": "integer",
+      "max": 100000,
+      "min": 100
+    }
+  }
+}

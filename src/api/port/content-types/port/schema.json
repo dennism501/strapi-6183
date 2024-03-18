@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ports",
+  "info": {
+    "singularName": "port",
+    "pluralName": "ports",
+    "displayName": "Port",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "portCode": {
+      "type": "uid",
+      "maxLength": 5,
+      "minLength": 5,
+      "required": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "country": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::country.country",
+      "inversedBy": "ports"
+    }
+  }
+}

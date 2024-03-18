@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "glossary_of_terms",
+  "info": {
+    "singularName": "glossary-of-term",
+    "pluralName": "glossary-of-terms",
+    "displayName": "Glossary of Terms",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "term": {
+      "type": "string",
+      "required": true,
+      "maxLength": 500
+    },
+    "definition": {
+      "type": "blocks",
+      "required": true
+    },
+    "sort_order": {
+      "max": 1000,
+      "min": 0,
+      "required": true,
+      "type": "integer"
+    }
+  }
+}

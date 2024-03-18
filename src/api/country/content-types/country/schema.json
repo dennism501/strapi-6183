@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "countries",
+  "info": {
+    "singularName": "country",
+    "pluralName": "countries",
+    "displayName": "Country",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "isoCode": {
+      "type": "uid",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 2
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "ports": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::port.port",
+      "mappedBy": "country"
+    }
+  }
+}
